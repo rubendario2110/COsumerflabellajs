@@ -1,0 +1,9 @@
+{
+    "db_config" : {
+      "host": "localhost",
+      "user": "root",
+      "pass":"rubendario21",
+      "port": 3306,
+      "name": "falabella"
+    }
+  }
