@@ -9,11 +9,10 @@ const remoteApi = apiAdapter(config.remoteCountryService.basePath);
 class ConsumerService {
   consumer(data,context) {
     return new Promise((resolve, reject) => {
-      var config = {
+      let config = {
         headers: { 
           'Content-Type': 'application/json', 
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI4In0.Wv-z3Pq4T0xrbZJyNvXtAnyIq9WNJTjo-40csKkcm8I', 
-          'Cookie': '__cfduid=daebaa3fdee463e3264373de835ffbcf11609775309'
+          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI4In0.Wv-z3Pq4T0xrbZJyNvXtAnyIq9WNJTjo-40csKkcm8I'
         },
         data : data
       };
@@ -23,10 +22,12 @@ class ConsumerService {
           new ConsumerRepository()
             .save(data)
             .then(() => {
-              resolve({ "Sfghj": true });
+              resolve({"message":"Operacion realizada satisfactoriamente"});
             });
+        }).catch((error) => {
+          log.error(error);
+          reject({ error: error });
         });
-
     }).catch((error) => {
       log.error(error);
       reject({ error: error });

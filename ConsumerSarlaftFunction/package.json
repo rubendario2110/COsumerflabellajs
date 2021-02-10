@@ -10,7 +10,8 @@
     "axios": "^0.21.1",
     "log4js": "^6.3.0",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "sequelize-auto": "^0.7.11"
   },
   "scripts": {
     "test": "mocha tests/unit/"
